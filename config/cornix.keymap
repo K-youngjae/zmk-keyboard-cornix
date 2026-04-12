@@ -125,12 +125,18 @@
             tapping-term-ms = <250>;
         };
 
-        enc_scroll: enc_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+        scroll_enc: scroll_enc {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <30>;
+        };
 
-            tap-ms = <40>;
+        bt_prof_enc: bt_prof_enc {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+            tap-ms = <30>;
         };
     };
 
@@ -168,7 +174,7 @@
 &kp LCTRL  &kp LGUI  &kp LALT  &cap_td  &kp SPACE  &kp ENTER  &kp ENTER   &kp SPACE      &kp RALT       &td_alt_f4     &kp PSCRN  &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_enc>;
         };
 
         NUM_layer {
@@ -177,22 +183,22 @@
 &kp GRAVE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR   &kp PRCNT  &kp N7  &kp N8  &kp N9     &kp PLUS   &kp MINUS  &kp BSPC
 &kp TAB    &kp CARET  &kp AMPS  &kp ASTRK  &kp SQT    &kp DQT    &kp N4  &kp N5  &kp N6     &kp ASTRK  &kp SLASH  &kp ENTER
 &kp LPAR   &kp RPAR   &kp LBRC  &kp RBRC   &kp LBKT   &kp RBKT   &none   &none   &kp N1     &kp N2     &kp N3     &none      &kp UP  &kp RSHFT
-&kp LCTRL  &none      &none     &none      &kp SPACE  &to 0      &to 0   &kp N0  &kp ENTER  &kp LEFT   &kp DOWN   &kp RIGHT
+&kp LCTRL  &kp LSHFT  &none     &kp ENTER  &kp SPACE  &to 0      &to 0   &kp N0  &kp ENTER  &kp LEFT   &kp DOWN   &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_enc>;
         };
 
         Navi_layer {
             display-name = "NAVI";
             bindings = <
-&none  &none  &none     &kp UP    &kp PAGE_UP  &kp PAGE_DOWN   &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP  &msc SCRL_DOWN  &none
-&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LSHFT     &none           &none
-&none  &none  &none     &none     &kp LCTRL    &msc SCRL_DOWN  &trans          &trans          &kp LCTRL        &none         &none           &none  &none  &none
-&none  &none  &none     &none     &none        &to 0           &to 0           &kp LCTRL       &none            &none         &none           &none
+&none  &none  &none     &kp UP     &kp PAGE_UP  &kp PAGE_DOWN   &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP    &none
+&none  &none  &kp LEFT  &kp DOWN   &kp RIGHT    &msc SCRL_UP    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &none
+&none  &none  &none     &none      &none        &msc SCRL_DOWN  &none  &trans          &trans          &none            &mkp MB3        &none  &none  &none
+&none  &none  &none     &kp LSHFT  &kp LCTRL    &to 0           &to 0  &kp LCTRL       &kp LSHFT       &none            &none           &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_enc>;
         };
 
         Function_layer {
@@ -204,7 +210,7 @@
 &none   &none   &none   &none   &none   &to 0   &to 1   &none   &none   &none    &none    &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_enc>;
         };
 
         BLT_layer {
@@ -216,7 +222,7 @@
 &out OUT_USB    &out OUT_BLE  &out OUT_TOG  &none         &none         &to 0  &to 0   &kp NUMBER_0  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_enc>;
         };
     };
 };
