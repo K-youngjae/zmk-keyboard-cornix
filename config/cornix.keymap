@@ -157,7 +157,7 @@ macros {
 &th 4 ESC  &kp Q     &kp W         &kp E    &kp R      &kp T      &kp Y       &td_mail_head  &td_mail_tail  &kp O          &kp P            &kp BSPC
 &kp TAB    &kp A     &th 3 S       &th 2 D  &th 1 F    &kp G      &kp H       &th 1 J        &th 2 K        &hm_r LCTRL L  &kp SEMI         &kp DEL
 &kp LSHFT  &kp Z     &kp X         &kp C    &kp V      &kp B      &bt BT_PRV  &bt BT_NXT     &ht_char B N   &kp M          &kp COMMA        &kp DOT    &kp FSLH  &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LEFT_ALT  &cap_td  &kp SPACE  &kp ENTER  &kp ENTER   &kp SPACE      &kp RALT       &td_alt_f4     &kp PRINTSCREEN  &kp RCTRL
+&kp LCTRL  &kp LGUI  &kp LALT      &cap_td  &kp SPACE  &kp ENTER  &kp ENTER   &kp SPACE      &kp RALT       &td_alt_f4     &kp PSCRN        &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp msc SCRL_UP msc SCRL_DOWN>;
@@ -178,8 +178,8 @@ macros {
         Navi_layer {
             display-name = "NAVI";
             bindings = <
-&none  &none  &none           &kp UP_ARROW    &kp PAGE_UP      &kp PAGE_DOWN   &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP    &msc SCRL_DOWN  &none
-&none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LEFT_SHIFT  &none           &none
+&none  &none  &none           &kp UP          &kp PAGE_UP      &kp PAGE_DOWN   &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP    &msc SCRL_DOWN  &none
+&none  &none  &kp LEFT        &kp DOWN        &kp RIGHT        &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LSHFT       &none           &none
 &none  &none  &none           &none           &kp LCTRL        &msc SCRL_DOWN  &trans          &trans          &kp LCTRL        &none           &none           &none  &none  &none
 &none  &none  &none           &none           &none            &to 0           &to 0           &kp LCTRL       &none            &none           &none           &none
             >;
