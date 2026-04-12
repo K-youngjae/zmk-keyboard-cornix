@@ -15,12 +15,12 @@
 #define FUNC 3
 #define BLT  4
 
-// 타이핑 감도 설정
+// Typing Sensitivity
 
 #define HM_TAPPING_TERM 250
 #define HM_PRIOR_IDLE 125
 
-// 헤더 파일의 키 포지션을 그룹화
+// Group key positions in header files
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5
@@ -126,21 +126,21 @@
         };
     };
 
-    macros {
+macros {
         m_mail_head: m_mail_head {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp COMMA &kp SPACE &kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &kp F &kp N2 &kp X &kp L &kp A &kp SPACE &kp R &kp L &kp A &kp D &kp U &kp D &kp W &kp O &kp D &kp L &kp Q &kp S &kp L &kp E &kp K &kp DOT &kp RET &kp RET>;
+            wait-ms = <15>; // 안정성을 위해 15ms로 살짝 상향
+            tap-ms = <15>;
+            bindings = bindings = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp COMMA &kp SPACE &kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &macro_release &kp K &macro_wait_time 40 &kp F &macro_wait_time 40 &kp N2 &kp X &kp L &kp A &kp SPACE &kp R &kp L &kp A &kp D &kp U &kp D &kp W &kp O &kp D &kp L &kp Q &kp S &kp L &kp E &kp K &kp DOT &kp RET &kp RET>;
             label = "M_MAIL_HEAD";
         };
 
         m_mail_tail: m_mail_tail {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <15>;
+            tap-ms = <15>;
             bindings = <&kp R &kp K &kp A &kp T &kp K &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;
             label = "M_MAIL_TAIL";
         };
