@@ -12,7 +12,8 @@
 #define BASE 0
 #define NUM  1
 #define NAVI 2
-#define BLTSET  3
+#define FUNC 3
+#define BLT  4
 
 // 타이핑 감도 설정
 
@@ -119,7 +120,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_F4";
             #binding-cells = <0>;
-            bindings = <&kp W>, <&kp LA(F4)>;
+            bindings = <&kp F5>, <&kp LA(F4)>;
 
             tapping-term-ms = <250>;
         };
@@ -153,10 +154,10 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&th 4 ESC  &kp Q     &td_alt_f4    &kp E    &kp R      &kp T      &kp Y       &td_mail_head  &td_mail_tail  &kp O          &kp P            &kp BSPC
+&th 4 ESC  &kp Q     &kp W         &kp E    &kp R      &kp T      &kp Y       &td_mail_head  &td_mail_tail  &kp O          &kp P            &kp BSPC
 &kp TAB    &kp A     &th 3 S       &th 2 D  &th 1 F    &kp G      &kp H       &th 1 J        &th 2 K        &hm_r LCTRL L  &kp SEMI         &kp DEL
 &kp LSHFT  &kp Z     &kp X         &kp C    &kp V      &kp B      &bt BT_PRV  &bt BT_NXT     &ht_char B N   &kp M          &kp COMMA        &kp DOT    &kp FSLH  &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LEFT_ALT  &cap_td  &kp SPACE  &kp ENTER  &kp ENTER   &kp SPACE      &kp RALT       &kp F5         &kp PRINTSCREEN  &kp RCTRL
+&kp LCTRL  &kp LGUI  &kp LEFT_ALT  &cap_td  &kp SPACE  &kp ENTER  &kp ENTER   &kp SPACE      &kp RALT       &td_alt_f4     &kp PRINTSCREEN  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp msc SCRL_UP msc SCRL_DOWN>;
