@@ -14,12 +14,12 @@
 #define NAVI 2
 #define BLTSET  3
 
-// Typing Sensitivity
+// 타이핑 감도 설정
 
 #define HM_TAPPING_TERM 250
 #define HM_PRIOR_IDLE 125
 
-// Group key positions in header files
+// 헤더 파일의 키 포지션을 그룹화
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5
@@ -76,11 +76,11 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred"; // key first
-            tapping-term-ms = <500>;  // <= 250ms press to layer
+            tapping-term-ms = <300>;  // <= 250ms press to layer
             bindings = <&to>, <&kp>;
 
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <200>;
         };
 
         lt: layer_tap {
