@@ -121,7 +121,7 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp COMMA &kp SPACE &kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &kp F &kp N2 &kp X &kp L &kp A &kp SPACE &kp R &kp L &kp A &kp D &kp U &kp D &kp W &kp O &kp D &kp L &kp Q &kp S &kp L &kp E &kp K &kp DOT &kp RET &kp RET>;
+            bindings = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp COMMA &kp SPACE &kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &kp F &macro_wait_time 50 &kp N2 &kp X &kp L &kp A &kp SPACE &kp R &kp L &kp A &kp D &kp U &kp D &kp W &kp O &kp D &kp L &kp Q &kp S &kp L &kp E &kp K &kp DOT &kp RET &kp RET>;
             label = "M_MAIL_HEAD";
         };
 
