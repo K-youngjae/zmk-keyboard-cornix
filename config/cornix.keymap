@@ -76,7 +76,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced"; // key first
-            tapping-term-ms = <200>;  // <= 250ms press to layer
+            tapping-term-ms = <500>;  // <= 250ms press to layer
             bindings = <&to>, <&kp>;
 
             quick-tap-ms = <175>;
@@ -119,8 +119,8 @@
         m_mail_head: m_mail_head {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;     
-            tap-ms = <10>;     
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp COMMA &kp SPACE &kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &kp F &kp N2 &kp X &kp L &kp A &kp SPACE &kp R &kp L &kp A &kp D &kp U &kp D &kp W &kp O &kp D &kp L &kp Q &kp S &kp L &kp E &kp K &kp DOT &kp RET &kp RET>;
             label = "M_MAIL_HEAD";
         };
@@ -128,8 +128,8 @@
         m_mail_tail: m_mail_tail {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;   
-            tap-ms = <10>;     
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&kp R &kp K &kp A &kp T &kp K &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;
             label = "M_MAIL_TAIL";
         };
