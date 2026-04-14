@@ -178,7 +178,7 @@
             display-name = "BASE";
             bindings = <
 &th 4 ESC  &kp Q     &kp W     &kp E    &kp R      &kp T                              &kp Y         &td_mail_head  &td_mail_tail  &kp O          &kp P        &kp BSPC
-&kp TAB    &kp A     &th 3 S   &th 2 D  &th 1 F    &kp G                              &kp H         &th 1 J        &th 2 K        &hm_r LCTRL L  &kp SEMI     &kp DEL
+&kp TAB    &kp A     &th 3 S   &th 2 D  &lt 1 F    &kp G                              &kp H         &th 1 J        &th 2 K        &hm_r LCTRL L  &kp SEMI     &kp DEL
 &kp LSHFT  &kp Z     &kp X     &kp C    &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_char B N  &kp M          &kp COMMA      &kp DOT        &kp FSLH     &kp RSHFT
 &kp LCTRL  &kp LGUI  &kp LALT  &cap_td  &kp SPACE  &kp ENTER                          &kp ENTER     &kp SPACE      &kp RALT       &td_alt_f4     &td_Prt_f15  &kp RCTRL
             >;
