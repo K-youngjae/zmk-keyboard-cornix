@@ -64,7 +64,7 @@
             hold-trigger-on-release;
         };
 
-        ht_char: hold_tap_char {
+        ht_b_n: hold_tap_b_n {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -97,9 +97,9 @@
             require-prior-idle-ms = <200>;
         };
 
-        cap_td: caps_tap_Dance {
+        td_capword_lock: td_capword_lock {
             compatible = "zmk,behavior-tap-dance";
-            label = "caps_tap_Dance";
+            label = "TD_CAPWORD_LOCK";
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
         };
@@ -163,11 +163,13 @@
             label = "HM_R_ARROW";
         };
 
-        td_win_lock: td_win_lock {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_WIN_LOCK";
-            #binding-cells = <0>;
-            bindings = <&none>, <&kp LG(L)>;
+        hd_winlock: hd_winlock {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HD_WINLOCK";
+            bindings = <&kp>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
         };
     };
 
@@ -209,10 +211,10 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&th 4 ESC  &kp Q     &kp W     &kp E    &kp R      &kp T                              &kp Y         &td_mail_head  &td_mail_tail           &kp O                  &kp P        &kp BSPC
-&kp TAB    &kp A     &th 3 S   &lt 2 D  &lt 1 F    &kp G                              &kp H         &th 1 J        &th 2 K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
-&kp LSHFT  &kp Z     &kp X     &kp C    &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_char B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LALT  &cap_td  &kp SPACE  &kp ENTER                          &kp ENTER     &kp SPACE      &td_win_lock            &td_alt_f4             &td_Prt_f15  &kp RCTRL
+&th 4 ESC  &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &td_mail_head  &td_mail_tail           &kp O                  &kp P        &kp BSPC
+&kp TAB    &kp A     &th 3 S   &lt 2 D           &lt 1 F    &kp G                              &kp H        &th 1 J        &th 2 K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
+&kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
+&kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &hd_winlock LG(L) 0     &td_alt_f4             &td_Prt_f15  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>, <&bt_prof_enc>;
