@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/janpfischer
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: K-youngjae
+      url-base: https://github.com/K-youngjae
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -26,7 +28,7 @@ manifest:
     #  revision: main
     #  clone-depth: 1
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: K-youngjae
       revision: main
       clone-depth: 1
     #- name: zmk-dongle-screen
