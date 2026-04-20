@@ -92,9 +92,9 @@
             bindings = <&mo>, <&kp>;
 
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
-            quick-tap-ms = <250>;
-            require-prior-idle-ms = <200>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <150>;
         };
 
         td_capword_lock: td_capword_lock {
@@ -162,16 +162,6 @@
             hold-trigger-on-release;
             label = "HM_R_ARROW";
         };
-
-        hd_winlock: hd_winlock {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HD_WINLOCK";
-            bindings = <&kp>, <&none>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            flavor = "hold-preferred";
-        };
     };
 
     macros {
@@ -198,8 +188,8 @@
         compatible = "zmk,combos";
 
         ralt_combo {
-            bindings = <&kp RALT>;
-            key-positions = <19 20>;
+            bindings = <&kp LG(L)>;
+            key-positions = <48 47>;
             layers = <0>;
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
@@ -215,7 +205,7 @@
 &th 4 ESC  &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &td_mail_head  &td_mail_tail           &kp O                  &kp P        &kp BSPC
 &kp TAB    &kp A     &th 3 S   &lt 2 D           &lt 1 F    &kp G                              &kp H        &th 1 J        &th 2 K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
 &kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &hd_winlock LG(L) 0     &td_alt_f4             &td_Prt_f15  &kp RCTRL
+&kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &kp RALT                &td_alt_f4             &td_Prt_f15  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>, <&bt_prof_enc>;
