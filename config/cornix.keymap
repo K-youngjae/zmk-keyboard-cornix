@@ -31,6 +31,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -116,6 +117,28 @@
             label = "TD_MAIL_TAIL";
             #binding-cells = <0>;
             bindings = <&kp I>, <&m_mail_tail>;
+        };
+
+        // Bypass tap-dance for U/I when a modifier is held.
+        // Preserve the modifier so normal shortcuts and shifted letters work.
+        mail_u_mod: mail_u_mod {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&td_mail_head>, <&kp U>;
+            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL |
+                     MOD_LALT | MOD_RALT | MOD_LGUI | MOD_RGUI)>;
+            keep-mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL |
+                          MOD_LALT | MOD_RALT | MOD_LGUI | MOD_RGUI)>;
+        };
+
+        mail_i_mod: mail_i_mod {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&td_mail_tail>, <&kp I>;
+            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL |
+                     MOD_LALT | MOD_RALT | MOD_LGUI | MOD_RGUI)>;
+            keep-mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL |
+                          MOD_LALT | MOD_RALT | MOD_LGUI | MOD_RGUI)>;
         };
 
         td_alt_f4: td_alt_f4 {
@@ -212,7 +235,7 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&th 4 ESC  &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &td_mail_head  &td_mail_tail           &kp O                  &kp P        &kp BSPC
+&th 4 ESC  &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &mail_u_mod  &mail_i_mod           &kp O                  &kp P        &kp BSPC
 &kp TAB    &kp A     &th 3 S   &lt 2 D           &lt 1 F    &kp G                              &kp H        &lt 1 J        &lt 2 K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
 &kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
 &kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &kp RALT                &td_alt_f4             &td_Prt_f15  &kp RCTRL
