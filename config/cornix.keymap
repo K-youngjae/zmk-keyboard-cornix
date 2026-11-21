@@ -168,9 +168,19 @@
         m_mail_head: m_mail_head {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <15>; // 안정성을 위해 15ms로 살짝 상향
+            wait-ms = <15>;
             tap-ms = <15>;
-            bindings = <&kp W &kp J &kp S &kp W &kp K &kp V &kp U &kp S &kp D &kp M &kp L &kp W &kp P &kp D &kp J &kp R &kp O &kp Q &kp K &kp F &kp N2 &kp X &kp L &kp A>;
+            // Korean IME initially active: 바디제어SE 팀
+            bindings
+                = <&kp Q &kp K &kp E &kp L &kp W &kp P &kp D &kp J &kp RALT>
+                , <&macro_wait_time 100>
+                , <&kp LS(S)>
+                , <&macro_wait_time 15>
+                , <&kp LS(E) &kp SPACE &kp RALT>
+                , <&macro_wait_time 100>
+                , <&kp X>
+                , <&macro_wait_time 15>
+                , <&kp L &kp A>;
             label = "M_MAIL_HEAD";
         };
 
