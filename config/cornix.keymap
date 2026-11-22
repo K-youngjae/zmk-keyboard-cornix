@@ -305,7 +305,7 @@
     };
 };
 
-// Test branch only: quicker full-screen pointer travel in NAVI.
+// NAVI pointer acceleration and travel speed.
 // The existing &mmv MOVE_* key bindings use the value above.
 &mmv {
     time-to-max-speed-ms = <250>;
