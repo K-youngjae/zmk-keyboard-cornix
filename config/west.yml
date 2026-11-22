@@ -29,7 +29,7 @@ manifest:
     #  clone-depth: 1
     - name: zmk-dongle-display
       remote: K-youngjae
-      revision: main
+      revision: battery-preview-test
       clone-depth: 1
     #- name: zmk-dongle-screen
     #  remote: janpfischer
