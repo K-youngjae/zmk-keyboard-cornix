@@ -242,7 +242,7 @@
             bindings = <
 &kp ESC     &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &mail_u_mod  &mail_i_mod           &kp O                  &kp P        &kp BSPC
 &kp TAB    &kp A     &th FUNC S   &lt NAVI D           &lt NUM F    &kp G                              &kp H        &lt NUM J        &lt NAVI K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
-&kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &to BLT      &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
+&kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &none       &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
 &kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &kp RALT                &td_alt_f4             &kp PSCRN     &kp RCTRL
             >;
 
