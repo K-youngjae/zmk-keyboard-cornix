@@ -112,6 +112,7 @@
             label = "TD_MAIL_HEAD";
             #binding-cells = <0>;
             bindings = <&kp U>, <&m_mail_head>;
+            tapping-term-ms = <150>;
         };
 
         td_mail_tail: td_mail_tail {
@@ -119,6 +120,7 @@
             label = "TD_MAIL_TAIL";
             #binding-cells = <0>;
             bindings = <&kp I>, <&m_mail_tail>;
+            tapping-term-ms = <150>;
         };
 
         // Bypass tap-dance for U/I when a modifier is held.
@@ -155,8 +157,8 @@
         navi_scroll_enc: navi_scroll_enc {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
+            bindings = <&msc MOVE_Y(40)>, <&msc MOVE_Y(-40)>;
+            tap-ms = <60>;
         };
 
         bt_prof_enc: bt_prof_enc {
@@ -202,13 +204,13 @@
             #binding-cells = <0>;
             wait-ms = <15>;
             tap-ms = <15>;
-            // Korean IME initially active: 바디제어SE 팀
+            // Korean IME initially active: 바디제어SE팀
             bindings
                 = <&kp Q &kp K &kp E &kp L &kp W &kp P &kp D &kp J &kp RALT>
                 , <&macro_wait_time 100>
                 , <&kp LS(S)>
                 , <&macro_wait_time 15>
-                , <&kp LS(E) &kp SPACE &kp RALT>
+                , <&kp LS(E) &kp RALT>
                 , <&macro_wait_time 100>
                 , <&kp X>
                 , <&macro_wait_time 15>
@@ -252,9 +254,9 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&th BLT ESC  &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &mail_u_mod  &mail_i_mod           &kp O                  &kp P        &kp BSPC
+&kp ESC     &kp Q     &kp W     &kp E             &kp R      &kp T                              &kp Y        &mail_u_mod  &mail_i_mod           &kp O                  &kp P        &kp BSPC
 &kp TAB    &kp A     &th FUNC S   &lt NAVI D           &lt NUM F    &kp G                              &kp H        &lt NUM J        &lt NAVI K                 &hm_r LCTRL L          &kp SEMI     &kp DEL
-&kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &bt BT_NXT  &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
+&kp LSHFT  &kp Z     &kp X     &kp C             &kp V      &kp B      &bt BT_PRV  &to BLT      &ht_b_n B N  &kp M          &hm_r_arrow LEFT COMMA  &hm_r_arrow RIGHT DOT  &kp FSLH     &kp RSHFT
 &kp LCTRL  &kp LGUI  &kp LALT  &td_capword_lock  &kp SPACE  &kp ENTER                          &kp ENTER    &kp SPACE      &kp RALT                &td_alt_f4             &td_Prt_f15  &kp RCTRL
             >;
 
