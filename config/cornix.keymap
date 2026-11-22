@@ -227,6 +227,14 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
         };
+
+        // Press both thumb Enter keys to toggle persistent NUM mode.
+        combo_num_lock {
+            bindings = <&tog NUM>;
+            key-positions = <LH0 RH0>;
+            layers = <BASE NUM>;
+            timeout-ms = <50>;
+        };
     };
 
     keymap {
